@@ -93,10 +93,54 @@ npm test
 ## Tools
 
 ### placid_list_templates
-Lists available templates with optional filtering. Each template includes its title, ID, preview image URL, available layers, and tags.
+Lists available Placid templates with filtering options. Each template includes its title, ID, preview image URL, available layers, and tags.
+
+#### Parameters
+- `collection_id` (optional): Filter templates by collection ID
+- `custom_data` (optional): Filter by custom reference data
+- `tags` (optional): Array of tags to filter templates by
+
+#### Response
+Returns an array of templates, each containing:
+- `uuid`: Unique identifier for the template
+- `title`: Template name
+- `thumbnail`: Preview image URL (if available)
+- `layers`: Array of available layers with their names and types
+- `tags`: Array of template tags
 
 ### placid_generate_creative
-Generate creatives using templates and provided assets.
+Generate creatives by combining Placid templates with dynamic content like text and images.
+
+#### Parameters
+- `template_id` (required): UUID of the template to use
+- `layers` (required): Object containing dynamic content for template layers
+  - For text layers: `{ "layerName": { "text": "Your content" } }`
+  - For image layers: `{ "layerName": { "image": "https://image-url.com" } }`
+- `modifications` (optional): Customize the output
+  - `width`: Output width in pixels
+  - `height`: Output height in pixels  
+  - `filename`: Custom filename for the generated creative
+
+#### Response
+Returns an object containing:
+- `status`: "finished" when complete
+- `image_url`: URL to download the generated creative
+- `credits_used`: Number of Placid credits consumed
+
+#### Example Usage for LLM models
+```json
+{
+  "template_id": "template-uuid",
+  "layers": {
+    "headline": { "text": "Welcome to My App" },
+    "background": { "image": "https://example.com/bg.jpg" }
+  },
+  "modifications": {
+    "width": 1200,
+    "height": 630
+  }
+}
+```
 
 ## Documentation
 
