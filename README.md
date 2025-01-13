@@ -25,7 +25,7 @@ To install @felores/placid-mcp-server for Claude Desktop automatically via [Smit
 npx -y @smithery/cli install @felores/placid-mcp-server --client claude
 ```
 
-### Option 1: NPX Installation (Recommended)
+### NPX Installation
 
 The quickest way to get started is using npx:
 
@@ -49,7 +49,7 @@ Then add the server configuration to your Claude Desktop or Cline settings:
 }
 ```
 
-### Option 2: Manual Installation
+### Manual Installation
 
 1. Clone the repository:
 ```bash
