@@ -7,7 +7,7 @@ import { generateCreativeSchema } from "./generate_creative/schema.js";
 export const TOOL_DEFINITIONS = [
   {
     name: TOOLS.LIST_TEMPLATES,
-    description: "Get a list of available Placid templates with optional filtering",
+    description: "Get a list of available Placid templates with optional filtering. Each template includes its title, ID, preview image URL, available layers, and tags.",
     inputSchema: listTemplatesSchema,
     handler: handleListTemplates,
   },

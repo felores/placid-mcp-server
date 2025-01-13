@@ -1,14 +1,22 @@
 {
-  "name": "placid-mcp-server",
+  "name": "@felores/placid-mcp-server",
   "version": "1.0.0",
   "description": "MCP server for Placid.app integration",
   "type": "module",
   "main": "build/index.js",
+  "bin": {
+    "placid-mcp": "./bin/placid-mcp.js"
+  },
+  "files": [
+    "build",
+    "bin"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node build/index.js",
     "test": "jest",
-    "dev": "ts-node-dev --respawn src/index.ts"
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "latest"
@@ -19,5 +27,20 @@
     "ts-node-dev": "^2.0.0",
     "jest": "^29.0.0",
     "@types/jest": "^29.0.0"
+  },
+  "keywords": [
+    "placid",
+    "mcp",
+    "server",
+    "image",
+    "template"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
