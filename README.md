@@ -1,4 +1,5 @@
 # Placid.app MCP Server
+[![smithery badge](https://smithery.ai/badge/@felores/placid-mcp-server)](https://smithery.ai/server/@felores/placid-mcp-server)
 
 An MCP server implementation for integrating with Placid.app's API. This server provides tools for listing templates and generating creatives through the Model Context Protocol.
 
@@ -15,6 +16,14 @@ An MCP server implementation for integrating with Placid.app's API. This server 
 - Type-safe implementation
 
 ## Installation Options
+
+### Installing via Smithery
+
+To install @felores/placid-mcp-server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@felores/placid-mcp-server):
+
+```bash
+npx -y @smithery/cli install @felores/placid-mcp-server --client claude
+```
 
 ### Option 1: NPX Installation (Recommended)
 
