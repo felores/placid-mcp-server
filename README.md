@@ -1,6 +1,10 @@
-# Placid MCP Server
+# Placid.app MCP Server
 
 An MCP server implementation for integrating with Placid.app's API. This server provides tools for listing templates and generating creatives through the Model Context Protocol.
+
+<a href="https://glama.ai/mcp/servers/xeklsydon0">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/xeklsydon0/badge" />
+</a>
 
 ## Features
 
