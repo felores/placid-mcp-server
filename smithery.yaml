@@ -1,0 +1,17 @@
+# Smithery configuration file: https://smithery.ai/docs/deployments
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - placidApiToken
+    properties:
+      placidApiToken:
+        type: string
+        description: The API token for the Placid server.
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    config => ({ command: 'node', args: ['build/index.js'], env: { PLACID_API_TOKEN: config.placidApiToken } })
