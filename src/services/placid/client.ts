@@ -1,8 +1,10 @@
 import { PLACID_API_BASE, USER_AGENT } from "../../config/constants.js";
 import type {
   PlacidTemplate,
-  CreativeGenerationRequest,
-  CreativeGenerationResponse,
+  ImageGenerationRequest,
+  ImageGenerationResponse,
+  VideoGenerationRequest,
+  VideoGenerationResponse,
   PlacidError,
 } from "./types.js";
 
@@ -57,16 +59,32 @@ export class PlacidClient {
     return this.request<{ data: PlacidTemplate[] }>(endpoint);
   }
 
-  async generateCreative(
-    request: CreativeGenerationRequest
-  ): Promise<CreativeGenerationResponse> {
-    return this.request<CreativeGenerationResponse>("/images", {
+  // Renamed from generateCreative
+  async generateImage(
+    request: ImageGenerationRequest
+  ): Promise<ImageGenerationResponse> {
+    return this.request<ImageGenerationResponse>("/images", {
       method: "POST",
       body: JSON.stringify(request),
     });
   }
 
-  async getCreativeStatus(id: number): Promise<CreativeGenerationResponse> {
-    return this.request<CreativeGenerationResponse>(`/images/${id}`);
+  // Renamed from getCreativeStatus
+  async getImageStatus(id: number): Promise<ImageGenerationResponse> {
+    return this.request<ImageGenerationResponse>(`/images/${id}`);
+  }
+
+  // New video generation methods
+  async generateVideo(
+    request: VideoGenerationRequest
+  ): Promise<VideoGenerationResponse> {
+    return this.request<VideoGenerationResponse>("/videos", {
+      method: "POST",
+      body: JSON.stringify(request),
+    });
+  }
+
+  async getVideoStatus(id: number): Promise<VideoGenerationResponse> {
+    return this.request<VideoGenerationResponse>(`/videos/${id}`);
   }
 }

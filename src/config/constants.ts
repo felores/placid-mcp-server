@@ -4,7 +4,8 @@ export const USER_AGENT = "placid-mcp-server/1.0.0";
 // Tool names
 export const TOOLS = {
   LIST_TEMPLATES: "placid_list_templates",
-  GENERATE_CREATIVE: "placid_generate_creative",
+  GENERATE_IMAGE: "placid_generate_image",
+  GENERATE_VIDEO: "placid_generate_video",
 } as const;
 
 // Error messages

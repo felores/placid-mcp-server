@@ -1,4 +1,4 @@
-export const generateCreativeSchema = {
+export const generateVideoSchema = {
   type: "object",
   required: ["template_id", "layers"],
   properties: {
@@ -27,42 +27,52 @@ export const generateCreativeSchema = {
               image: {
                 type: "string",
                 format: "uri",
-                description: "URL for image/video layers"
+                description: "URL for image layers"
               }
             },
             required: ["image"]
+          },
+          {
+            type: "object",
+            properties: {
+              video: {
+                type: "string",
+                format: "uri",
+                description: "URL for video layers (.mp4)"
+              }
+            },
+            required: ["video"]
           }
         ]
       }
     },
-    modifications: {
-      type: "object",
-      properties: {
-        width: {
-          type: "number",
-          description: "Optional: Output width"
-        },
-        height: {
-          type: "number",
-          description: "Optional: Output height"
-        },
-        filename: {
-          type: "string",
-          description: "Optional: Custom filename"
-        }
-      }
+    audio: {
+      type: "string",
+      description: "URL of mp3 audio file for this video"
+    },
+    audio_duration: {
+      type: "string",
+      description: "Set to 'auto' to trim audio to video length"
+    },
+    audio_trim_start: {
+      type: "string",
+      description: "Timestamp of the trim start point (e.g. '00:00:45' or '00:00:45.25')"
+    },
+    audio_trim_end: {
+      type: "string",
+      description: "Timestamp of the trim end point (e.g. '00:00:55' or '00:00:55.25')"
     }
   }
 } as const;
 
-export const generateCreativeResponse = {
+export const generateVideoResponse = {
   type: "object",
   properties: {
     status: {
       type: "string",
       enum: ["finished"]
     },
-    image_url: {
+    video_url: {
       type: "string",
       format: "uri"
     },
@@ -70,5 +80,5 @@ export const generateCreativeResponse = {
       type: "number"
     }
   },
-  required: ["status", "image_url"]
+  required: ["status", "video_url"]
 } as const;
