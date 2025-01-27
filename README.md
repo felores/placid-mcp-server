@@ -15,6 +15,15 @@ An MCP server implementation for integrating with Placid.app's API. This server 
 - Error handling and validation
 - Type-safe implementation
 
+## Requirements: Node.js
+
+1. Install Node.js (version 18 or higher) and npm from [nodejs.org](https://nodejs.org/)
+2. Verify installation:
+   ```bash
+   node --version
+   npm --version
+   ```
+
 ## Installation Options
 
 ### NPX Installation
