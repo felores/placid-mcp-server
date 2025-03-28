@@ -1,6 +1,6 @@
 {
   "name": "@felores/placid-mcp-server",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Placid.app MCP server to list templates and generate images and videos",
   "type": "module",
   "main": "build/index.js",
@@ -19,7 +19,7 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "latest",
+    "@modelcontextprotocol/sdk": "^1.7.0",
     "dotenv": "^16.4.7"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
-import { handleGenerateCreative } from "../../../src/tools/generate_creative/index.js";
-import { PlacidClient } from "../../../src/services/placid/client.js";
+import { handleGenerateCreative } from "../../../src/tools/generate_creative/index";
+import { PlacidClient } from "../../../src/services/placid/client";
 
 // Mock the PlacidClient
 jest.mock("../../../src/services/placid/client.js");
