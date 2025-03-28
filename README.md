@@ -24,11 +24,19 @@ An MCP server implementation for integrating with Placid.app's API. This server 
    npm --version
    ```
 
-## Installation Options
+## Installation
 
-### NPX Installation
+### Quick Start (Recommended)
 
-The quickest way to get started is using npx, justadd the server configuration to your Claude Desktop or Cline settings:
+The easiest way to get started is using Smithery, which will automatically configure everything for you:
+
+```bash
+npx -y @smithery/cli install @felores/placid-mcp-server --client claude
+```
+
+### Manual Configuration
+
+If you prefer to configure manually, add this to your Claude Desktop or Cline settings:
 
 ```json
 {
@@ -44,51 +52,6 @@ The quickest way to get started is using npx, justadd the server configuration t
 }
 ```
 
-### Installing via Smithery
-
-To install @felores/placid-mcp-server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@felores/placid-mcp-server):
-
-```bash
-npx -y @smithery/cli install @felores/placid-mcp-server --client claude
-```
-
-### Manual Installation
-
-If you want to contribute to the project or modify the server.
-
-1. Clone the repository:
-```bash
-git clone https://github.com/felores/placid-mcp-server.git
-cd placid-mcp-server
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Build the project:
-```bash
-npm run build
-```
-
-4. Add the server configuration to your Claude Desktop or Cline settings:
-```json
-{
-  "mcpServers": {
-    "placid": {
-      "command": "node",
-      "args": ["path/to/placid-mcp-server/build/index.js"],
-      "env": {
-        "PLACID_API_TOKEN": "your-api-token"
-      }
-    }
-  }
-}
-```
-
-Replace `path/to/placid-mcp-server` with the absolute path to your cloned repository.
-
 ## Getting Your Placid API Token
 
 1. Log in to your [Placid.app](https://placid.app/) account
@@ -96,7 +59,7 @@ Replace `path/to/placid-mcp-server` with the absolute path to your cloned reposi
 3. Click on "Create API Token"
 4. Give your token a name (e.g., "MCP Server")
 5. Copy the generated token
-6. Add the token to your Claude Desktop or Cline configuration as shown in the installation steps above
+6. Add the token to your configuration as shown above
 
 ## Development
 
